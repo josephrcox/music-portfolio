@@ -255,6 +255,7 @@ body {
     object-fit: contain;
     z-index: -1;
     transition: all 1s;
+    margin-bottom: 20px;
 }
 
 .collapsed {
