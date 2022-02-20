@@ -61,7 +61,11 @@ for (let i=0;i<albums.length;i++) {
                 album_lc[x].classList.add('collapsed')
             }
         }
-        album_lc[i].scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+        const isMobile = navigator.userAgentData.mobile
+        if (isMobile) {
+            album_lc[i].scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+        }
+        
 
 
 
