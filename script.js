@@ -49,9 +49,24 @@ darkmodetoggle.addEventListener('click', function() {
 }, false)
 
 for (let i=0;i<albums.length;i++) {
-    albums[i].addEventListener('click', function() {
+    albums[i].addEventListener('click', async function() {
         album_lc[i].classList.toggle('collapsed')
         album_lc[i].classList.toggle('expanded')
-        console.log("test")
+
+        await sleep(250);
+        console.log("action")
+        for (let x=0;x<album_lc.length;x++) {
+            if (x != i) {
+                album_lc[x].classList.remove('expanded')
+                album_lc[x].classList.add('collapsed')
+            }
+        }
+
+        album_lc[i].scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+
     }, false)
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }

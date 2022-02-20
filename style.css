@@ -240,10 +240,9 @@ body {
 }
   
 .expanded {
-    height: 200px;
+    height: 250px;
     overflow: visible;
     padding-top: 10px;
-    padding-bottom: 10px;
     transition: all 0.25s ease-in-out;
     transform-origin: left top;
     transform: scaleY(1);
@@ -254,7 +253,7 @@ body {
     height: auto;
     object-fit: contain;
     z-index: -1;
-    transition: all 1s;
+    transition: all 0.25s;
     margin-bottom: 20px;
 }
 
