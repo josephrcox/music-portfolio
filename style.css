@@ -81,6 +81,11 @@ iframe {
     margin-bottom: 5px;
 }
 
+
+#bandcamp {
+    width: 100px;
+  }
+
 .linkButton {
     background-color: #EA4C89;
     border-radius: 8px;
