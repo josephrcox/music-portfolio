@@ -9,15 +9,13 @@ const iframes = document.getElementsByTagName('iframe')[0];
 
 const touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
+const eventProperties = {
+    source: window.location.search.split('?src=')[1],
+};
+
 for (let i = 0; i < userEngagementAreas.length; i++) {
     userEngagementAreas[i].addEventListener(touchEvent, function(e) {
-        console.log(e)
-    });
-}
-
-for (let i = 0; i < iframes.length; i++) {
-    iframes[i].contentDocument.body.addEventListener('mouseup', function(e) {
-        console.log(e)
+        gtag('event', 'tap_'+e.originalTarget.id, eventProperties);
     });
 }
 
@@ -25,7 +23,6 @@ var monitor = setInterval(function(){
     var elem = document.activeElement;
     if(elem && elem.tagName == 'IFRAME'){
         clearInterval(monitor);
-        console.log("iframe is active");
-        gtag('event', 'tap_spotify', {});
+        gtag('event', 'tap_spotify', eventProperties);
     }
 }, 100);
